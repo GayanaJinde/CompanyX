@@ -30,7 +30,7 @@ const Navbar = () => {
             <a href="#">Home</a>
           </li>
           <li>
-            <a href="../../containers/Register/Register.js" onClick={Register}>Create-User</a>
+            <a href="../../containers/Register/Register.js" onClick={Register}>Register</a>
           </li>
           <li>
             <a href="#download">Companies</a>

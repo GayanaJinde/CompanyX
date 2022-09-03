@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Register from "./components/Register/register";
+import Register from "./components/Register/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Navbar,
@@ -11,13 +11,12 @@ class App extends Component {
 
   render(){
     return (
-      <div>
-        <header className="header-bg">
-          <Navbar />
-          <Register/>
-          <Header />
-        </header>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<>{<Navbar />}{<Header />}</>}/>
+          <Route path="/register" element={<>{<Navbar />}{<Register/>}</>}/>
+        </Routes>
+      </BrowserRouter>
     );
   }
 }

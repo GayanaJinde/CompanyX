@@ -3,7 +3,7 @@ import { AiOutlineBars } from "react-icons/ai";
 import { RiCloseLine } from "react-icons/ri";
 import { SiDatadog } from "react-icons/si";
 import "../UI/Button/Button.css";
-import Register from "../../containers/Register/Register.js";
+import Register from "../Register/Register.js";
 
 import "./Navbar.css";
 
@@ -27,16 +27,16 @@ const Navbar = () => {
           id={showMenu ? "nav-links-mobile" : "nav-links-mobile-hide"}
         >
           <li>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
-            <a href="../../containers/Register/Register.js" onClick={Register}>Register</a>
+            <a href="/register" onClick={Register}>Register</a>
           </li>
           <li>
-            <a href="#download">Companies</a>
+            <a href="/companies">Companies</a>
           </li>
           <li>
-            <a href="#subscribe">View Employees</a>
+            <a href="/view">View Employees</a>
           </li>
         </ul>
       </menu>

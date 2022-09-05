@@ -4,7 +4,8 @@ import { RiCloseLine } from "react-icons/ri";
 import { SiDatadog } from "react-icons/si";
 import "../UI/Button/Button.css";
 import Register from "../Register/Register.js";
-
+import Company from "../Company/Company";
+import View from "../NonAssigned/View";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -33,10 +34,10 @@ const Navbar = () => {
             <a href="/register" onClick={Register}>Register</a>
           </li>
           <li>
-            <a href="/companies">Companies</a>
+            <a href="/employees" onClick={Company}>View Employees</a>
           </li>
           <li>
-            <a href="/view">View Employees</a>
+            <a href="/view" onClick={View}>People</a>
           </li>
         </ul>
       </menu>

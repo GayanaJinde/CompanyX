@@ -25,7 +25,7 @@ const Header = () => {
             CompanyX helps you map employee of your choice to the company you want. Give it a try!
           </p>
           <div className="header-cta">
-            <Button text={"Learn More!"} btnClass={"btn-light"} href={"#"} />
+            <Button text={"Learn More"} btnClass={"btn-light"} href={"#"} />
           </div>
         </div>
         <div className="header-right" data-aos="fade-left">

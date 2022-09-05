@@ -14,10 +14,10 @@ const Company = () =>{
       }, []);
     return( 
       <>
-        <div className="ma5 " data-aos="fade-right">
+        <div className="mh7 mv5" data-aos="fade-right">
             <Organization users={users}/>
         </div>
-        <div data-aos="fade-right">
+        <div className="mh6 mb5" data-aos="fade-right">
             <EmployeeList users={users}/>
         </div>
       </>

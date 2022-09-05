@@ -7,7 +7,7 @@ import { users } from "../../users";
 const View = () =>{
     return( 
       <>
-        <div >
+        <div className="mh7 mv4 ">
             <AllEmployees users={users}/>
         </div>
       </>

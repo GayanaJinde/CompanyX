@@ -14,7 +14,7 @@ const Organization = () => {
                         </select>
                     </div>
                 </div>
-                <div class="db fw4 lh-copy f3 ma5 mb0 ml0 ">
+                <div class="db fw4 lh-copy f3 ma4 mb0 ml0 ">
                     <Button text={"Submit"} btnClass={"btn-light"} href={"#"} />
                     <Button text={"Create"} btnClass={"btn-light"} href={"#"} />
                 </div>

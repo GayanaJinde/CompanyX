@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./Header.css";
 import company from "../../assets/company.jpg";
-import CreateCompany from "../Company/CComponents/Organization/CreateCompany";
 import AOS from "aos"; // animation on scroll
 import "aos/dist/aos.css";
 

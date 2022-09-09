@@ -18,32 +18,28 @@ class AllEmployees extends React.Component {
         .then(res => res.json())
         .then(
             (result)=> {
-                this.setState({
-                    users : result,
-                    isLoaded : true,
-                });
-            },
-            (error) => {
-                this.setState({
-                  isLoaded: true,
-                  error
-                });
-              }
+                if(result !== "No Employees"){
+                    this.setState({
+                        users : result,
+                        isLoaded : true,
+                    });
+                }else {
+                    this.setState({error: result, isLoaded: true})
+                }
+            }
         );
     }
 
     render(){
         const { error, isLoaded, users } = this.state;
         if(error){
-            return <div className="header-left"><span>Error: {error.message}</span></div>;
+            return (<div class="form-group ">
+                        <div class="db fw4 lh-copy f3 ma5 mb0 ml0 center">
+                            {error && <legend className="f3 fw7 gh0 mh0 mb5 center red athelas">NO EMPLOYEES TO SHOW</legend>}
+                        </div>
+                </div>);
         }else if(!isLoaded){
             return <div className="header-left"><span>Loading...</span></div>;
-        }else if(users === [] || users === null){
-            return(
-                <div className="f3 white">
-                    NO EMPLOYEES TO SHOW!
-                </div>
-            );
         }else {
             return(
                 <div className="header-right flex flex-wrap ">

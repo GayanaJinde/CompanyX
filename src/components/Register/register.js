@@ -11,9 +11,8 @@ const Register = () =>{
         });
       }, []);
     
-    const [error, setError] = useState('');  
     const [isLoaded, setIsLoaded] = useState(false);
-    const [result, setResult] = useState('');
+    const [result, setResult] = useState(undefined);
     const [companies, setCompanies] = useState([]);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -62,11 +61,18 @@ const Register = () =>{
         .then(response => response.json())
         .then(
             (result)=> {
-                setResult(result);
-                setIsLoaded(true);
-            },
+                if(result !== "unable to register!"){
+                    setResult({type: 'success', result});
+                    setIsLoaded(true);
+                }else{
+                    console.log(result);
+                    setResult({type: 'error', result});
+                    setIsLoaded(true);
+                }
+            })
+        .catch(
             (error) => {
-                setError(error);
+                setResult({type: 'error', error});
                 setIsLoaded(true);
               }
         );
@@ -81,12 +87,6 @@ const Register = () =>{
           }
         );
       }, [])
-
-    const returnResult = ( error, isLoaded, result) => {
-        
-        return <legend className="f1 fw7 gh0 mh0 mb5 center red athelas"><span>{result.message}</span></legend>
-        
-    }
 
     return( 
         <div className="header-left" data-aos="fade-right">
@@ -158,8 +158,11 @@ const Register = () =>{
                 <div class="dib fw4 lh-copy f3 ma5 mb0 ml0 grow center">
                     <input type="button" value="Register" Class={"btn btn-light"} onClick={onRegister}/>
                 </div>
-                <div class="dib fw4 lh-copy f3 ma5 mb0 ml0 grow center">
-                    {returnResult}
+                <div class="form-group ">
+                    <div class="db fw4 lh-copy f3 ma5 mb0 ml0 center">
+                        {result?.type === 'success' && <legend className="f3 fw7 gh0 mh0 mb5 center green athelas">REGISTERED!</legend>}
+                        {result?.type === 'error' && <legend className="f3 fw7 gh0 mh0 mb5 center red athelas">COULD NOT REGISTER USER</legend>}
+                    </div>
                 </div>
             </form>
         </article>

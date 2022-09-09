@@ -20,22 +20,24 @@ const Organization = ({companies}) => {
         .then(response => response.json())
         .then(
             (employees) => {
-                setEmployees(employees);
-                setIsLoaded(true);
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            } 
+                if(employees !== "No Employees"){
+                    setEmployees(employees);
+                    setIsLoaded(true);
+                }
+                else {
+                    setIsLoaded(true);
+                    setError(employees);
+                }
+            }
         );
     }
 
-    if(employees === [] || employees === null){
-        return(
-            <div className="f3 white">
-                NO EMPLOYEES TO SHOW!
-            </div>
-        );
+    if(error){
+        return (<div class="form-group ">
+                    <div class="db fw4 lh-copy f3 ma5 mb0 ml0 center">
+                        {error && <legend className="f3 fw7 gh0 mh0 mb5 center red athelas">NO EMPLOYEES TO SHOW</legend>}
+                    </div>
+            </div>);
     }else {
         return(
             <div className="header-left" >

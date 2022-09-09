@@ -16,7 +16,7 @@ const Organization = ({companies}) => {
 
       
     const onSubmit = (event) => {
-        fetch(`http://localhost:3000/employees/${chosen}`)
+        fetch(`https://still-oasis-80942.herokuapp.com/${chosen}`)
         .then(response => response.json())
         .then(
             (employees) => {

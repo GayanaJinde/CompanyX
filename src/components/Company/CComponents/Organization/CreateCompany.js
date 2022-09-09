@@ -14,7 +14,7 @@ const CreateCompany = () => {
     }
 
     const onEnter = (event) => {
-        fetch('http://localhost:3000/company/create', {
+        fetch('https://still-oasis-80942.herokuapp.com/create', {
             method : 'post',
             headers : { 'content-Type' : 'application/json'},
             body : JSON.stringify({

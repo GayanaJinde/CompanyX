@@ -9,7 +9,7 @@ const Company = () =>{
   const [companies, setCompanies] = useState([]);
 
   useEffect(()=>{
-    fetch("http://localhost:3000/company")
+    fetch("https://still-oasis-80942.herokuapp.com/company")
     .then(res => res.json())
     .then(
       (result) => {

@@ -14,7 +14,7 @@ class AllEmployees extends React.Component {
     }
 
     componentDidMount(){
-        fetch("http://localhost:3000/view")
+        fetch("https://still-oasis-80942.herokuapp.com/view")
         .then(res => res.json())
         .then(
             (result)=> {

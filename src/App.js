@@ -13,7 +13,7 @@ import CreateCompany from "./components/Company/CComponents/Organization/CreateC
 class App extends Component {
 
   componentDidMount(){
-    fetch('http://localhost:3000')
+    fetch('https://still-oasis-80942.herokuapp.com')
       .then(response => response.json())
       .then(console.log);
   }

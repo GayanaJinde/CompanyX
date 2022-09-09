@@ -7,7 +7,7 @@ const Card = ({ id, firstName, email }) => {
     const [company, setCompany] = useState(null);
 
     useEffect(()=>{
-        fetch("http://localhost:3000/company")
+        fetch("https://still-oasis-80942.herokuapp.com/company")
         .then(res => res.json())
         .then(
           (result) => {
@@ -21,7 +21,7 @@ const Card = ({ id, firstName, email }) => {
     }
 
    const onLink = ()=> {
-        fetch(`http://localhost:3000/link/${id}`,{
+        fetch(`https://still-oasis-80942.herokuapp.com/link/${id}`,{
             method : 'put',
             headers : { 'content-Type' : 'application/json'},
             body : JSON.stringify({

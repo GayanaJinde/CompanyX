@@ -1,0 +1,39 @@
+
+  input:hover,
+  #nav-links-mobile a:hover {
+    color: orangered;
+  }
+  input.btn {
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  a.btn {
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  input.btn-dark {
+    background: transparent;
+    border: 2px solid #fff;
+  }
+  input.btn-light {
+    background: orangered;
+    border: 2px solid transparent;
+    color: #fff;
+  }
+  a.btn-light {
+    background: orangered;
+    border: 2px solid transparent;
+    color: #fff;
+    text-decoration: none;
+  }
+  @media screen and (max-width: 600px) {
+    input.btn {
+      display: inline;
+    }
+  }
+  

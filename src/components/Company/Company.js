@@ -1,27 +1,36 @@
-import React, { useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Organization from "./CComponents/Organization/Organization";
-import EmployeeList from "./CComponents/EmployeeList/EmployeeList";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import 'tachyons';
-import { users } from "../../users";
 
 const Company = () =>{
-    useEffect(() => {
-        AOS.init({
-          duration: 1000,
-        });
-      }, []);
-    return( 
-      <>
-        <div className="mh7 mv5" data-aos="fade-right">
-            <Organization users={users}/>
-        </div>
-        <div className="mh6 mb5" data-aos="fade-right">
-            <EmployeeList users={users}/>
-        </div>
-      </>
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [companies, setCompanies] = useState([]);
+
+  useEffect(()=>{
+    fetch("http://localhost:3000/company")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        console.log(result, "result");
+        setIsLoaded(true);
+        setCompanies(result);
+      },
+      (error)=>{
+        setIsLoaded(true);
+        setError(error);
+      }
     );
+  }, [])
+
+      return( 
+        <>
+          <div className="mh7 mv5" >
+              <Organization companies = { companies }/>
+          </div>
+        </>
+      );
 }
 
 export default Company;

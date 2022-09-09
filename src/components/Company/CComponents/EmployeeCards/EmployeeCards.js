@@ -1,15 +1,30 @@
 import React from "react";
-import Button from "../../../UI/Button/Button";
 
-const EmployeeCards = ({ id, name }) => {
+const EmployeeCards = ({ id, firstName, email }) => {
+
+    const onUnLink = ()=> {
+        fetch(`http://localhost:3000/unlink/${id}`,{
+            method : 'put',
+            headers : { 'content-Type' : 'application/json'},
+            body : JSON.stringify({
+                id : id,
+                firstName : firstName,
+                email : email
+            })
+        })
+        .then(res => res.json())
+        .then(console.log);
+    }
+
     return(
-        <article class="mw5 grow center bg-white shadow-5 br3 pa3 pa4-ns mv3 ba b--black-10">
+        <article class="mw-50 center bg-white shadow-5 br3 pa3 pa4-ns mv3 ba b--black-10">
             <div className="tc">
                 <img src="http://tachyons.io/img/avatar_1.jpg" class="br-100 h4 w4 dib ba b--black-05 pa2" title="Photo of a kitty" alt="profile"/>
-                <h1 class="f3 mb2">{name}</h1>
-                <h2 class="f2 fw4 purple mt0">{id}</h2>
-                <div class="db fw4 lh-copy f3 ma5 mb0 ml0">
-                    <Button text={"Unlink"} btnClass={"btn-light"} href={"#"} />
+                <h2 class="f2 fw4 purple mt1">{id}</h2>
+                <h1 class="f3 mb1">{firstName}</h1>
+                <h1 class="f3 mb2">{email}</h1> 
+                <div class="dib fw4 lh-copy f3 ma5 mb0 ml0 grow center">
+                    <input type="button" value="Unlink" Class={"btn btn-light"} onClick={onUnLink}/>
                 </div>
             </div>
         </article>

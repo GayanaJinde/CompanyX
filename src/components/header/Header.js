@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import "./Header.css";
-import Button from "../UI/Button/Button";
 import company from "../../assets/company.jpg";
-
+import CreateCompany from "../Company/CComponents/Organization/CreateCompany";
 import AOS from "aos"; // animation on scroll
 import "aos/dist/aos.css";
 
@@ -24,8 +23,8 @@ const Header = () => {
           <p className="u-text-small">
             CompanyX helps you map employee of your choice to the company you want. Give it a try!
           </p>
-          <div className="header-cta">
-            <Button text={"Learn More"} btnClass={"btn-light"} href={"#"} />
+          <div className="header-cta grow nounderline">
+            <a href="/create" Class={"btn btn-light"} value="CreateCompany">Create Company</a>
           </div>
         </div>
         <div className="header-right" data-aos="fade-left">

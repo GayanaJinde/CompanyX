@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import { AiOutlineBars } from "react-icons/ai";
 import { RiCloseLine } from "react-icons/ri";
 import { SiDatadog } from "react-icons/si";
-import "../UI/Button/Button.css";
-import Register from "../Register/Register.js";
-import Company from "../Company/Company";
-import View from "../NonAssigned/View";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -31,13 +27,13 @@ const Navbar = () => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/register" onClick={Register}>Register</a>
+            <a href="/register" >Register</a>
           </li>
           <li>
-            <a href="/employees" onClick={Company}>View Employees</a>
+            <a href="/employees" >View Employees</a>
           </li>
           <li>
-            <a href="/view" onClick={View}>People</a>
+            <a href="/view" >People</a>
           </li>
         </ul>
       </menu>
